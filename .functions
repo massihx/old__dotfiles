@@ -1,0 +1,20 @@
+# Create a new directory and enter it
+function md() {
+	mkdir -p "$@" && cd "$@"
+}
+
+# find shorthand
+function f() {
+    find . -name "$1"
+}
+
+# cd into whatever is the forefront Finder window.
+cdf() {  # short for cdfinder
+  cd "`osascript -e 'tell app "Finder" to POSIX path of (insertion location as alias)'`"
+}
+
+# take this repo and copy it to somewhere else minus the .git stuff.
+function gitexport(){
+	mkdir -p "$1"
+	git archive master | tar -x -C "$1"
+}

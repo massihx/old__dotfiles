@@ -1,0 +1,9 @@
+brew update
+
+brew upgrade
+
+brew install git
+brew install rename
+brew install tree
+
+brew cleanup
